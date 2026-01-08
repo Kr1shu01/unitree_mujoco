@@ -36,12 +36,16 @@ int main(int argc, char **argv)
 {
   // Create an instance of Joystick
   Joystick joystick("/dev/input/js0");
-
+  printf("finding Joystick ......\n");
   // Ensure that it was found and that we can use it
   if (!joystick.isFound())
   {
     printf("open failed.\n");
     exit(1);
+  }
+  else
+  {
+    printf("open success.\n");
   }
 
   xKeySwitchUnion unitree_key;
